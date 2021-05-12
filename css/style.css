@@ -1,0 +1,22 @@
+/*Variables*/
+:root {
+  --rows: 16;
+  --columns: 16;
+}
+
+/* General styles*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  border: 1px solid black;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 25px);
+}
