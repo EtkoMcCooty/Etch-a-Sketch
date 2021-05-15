@@ -1,10 +1,12 @@
+// Button that creates a new grid 
+const button = document.createElement('button');
+button.textContent = 'New Grid';
+button.setAttribute('style', 'display: block; margin: 15px auto; padding: 10px 5px');
+document.body.append(button);
+
 // Connect container div to DOM
 const container = document.getElementById('container'); 
-
-// Button that creates a new grid 
-/*const button = document.createElement('button');
-button.textContent = 'New Grid';
-container.append(button);*/
+document.body.appendChild(container);
 
 let createGrid = (rows, columns) => {
     for (i = 0; i < (rows * columns); i++) {
@@ -20,12 +22,10 @@ let createGrid = (rows, columns) => {
 }
 
 let randomColor = () => {
-     let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+     let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16); // Check this site for code explanation -> (https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj)
      console.log(randomColor);
      return randomColor;
     }
-
-createGrid(16, 16);
 
 // Function to clear the current grid
 let clearGrid = (rows, columns) => {
@@ -34,4 +34,4 @@ let clearGrid = (rows, columns) => {
     }
 }
 
-
+createGrid(prompt('How many rows?'), prompt('How many columns?'));
