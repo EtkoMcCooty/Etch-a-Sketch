@@ -1,8 +1,8 @@
 /*Variables*/
-:root {
+/*:root {
   --rows: 16;
   --columns: 16;
-}
+}*/
 
 /* General styles*/
 * {
@@ -17,6 +17,4 @@ div {
 
 #container {
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-  grid-template-rows: repeat(var(--rows), 50px);
 }
