@@ -5,6 +5,7 @@ button.setAttribute('style', 'display: block; margin: 15px auto; padding: 10px 5
 button.addEventListener('click', () => {
     clearGridInfo();
     clearGrid(prompt('How many rows to remove?'), prompt('How many columns to remove?'))
+
 })
 document.body.append(button);
 
@@ -48,4 +49,5 @@ let clearGridInfo = () => {
     document.getElementById('grid-info').remove();
 }
 
-createGrid(prompt('How many rows to create?'), prompt('How many columns to create?'));
+//createGrid(prompt('How many rows to create?'), prompt('How many columns to create?'));
+createGrid(16, 16);
