@@ -2,6 +2,9 @@
 const button = document.createElement('button');
 button.textContent = 'New Grid';
 button.setAttribute('style', 'display: block; margin: 15px auto; padding: 10px 5px');
+button.addEventListener('click', () => {
+    clearGrid(prompt('How many rows to remove?'), prompt('How many columns to remove?'))
+})
 document.body.append(button);
 
 // Connect container div to DOM
@@ -19,6 +22,12 @@ let createGrid = (rows, columns) => {
         })
         container.appendChild(div);
     }   
+
+    const p = document.createElement('p');
+    p.textContent = `Your grid is ${rows} rows x ${columns} columns.`
+    p.setAttribute('style', 'text-align: center; margin-top: 10px');
+    p.setAttribute('id', 'grid-info');
+    document.body.append(p);
 }
 
 let randomColor = () => {
@@ -30,8 +39,10 @@ let randomColor = () => {
 // Function to clear the current grid
 let clearGrid = (rows, columns) => {
     for (i = 0; i < (rows * columns); i++) {
-        container.remove(div);
+        container.remove(container.getElementsByClassName('square'));
+        
+        
     }
 }
 
-createGrid(prompt('How many rows?'), prompt('How many columns?'));
+createGrid(prompt('How many rows to create?'), prompt('How many columns to create?'));
