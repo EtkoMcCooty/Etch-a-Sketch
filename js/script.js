@@ -9,7 +9,7 @@ button.setAttribute('style', 'display: block; margin: 15px auto; padding: 10px 5
 const container = document.getElementById('container'); 
 
 let createGrid = (dimensions) => {
-    if (dimensions <= 64) {
+    if (dimensions <= 100) {
         for (i = 0; i < dimensions ** 2; i++) {
             container.setAttribute('style', `grid-template-columns: repeat(${dimensions}, 1fr); grid-template-rows: repeat(${dimensions}, 50px)`); // Set size of the grid
             const div = document.createElement('div');
@@ -22,7 +22,7 @@ let createGrid = (dimensions) => {
         }   
     }
     else {
-        alert('Grid size must be 64 or less');
+        alert('Grid size must be 100 or less');
         window.location.reload(); // reload the page
     }
 }
@@ -32,15 +32,6 @@ let randomColor = () => {
      console.log(randomColor);
      return randomColor;
     }
-
-// Function to clear the current grid
-let clearGrid = () => {
-    window.location.reload();
-}
-
-let clearGridInfo = () => {
-    document.getElementById('grid-info').remove();
-}
 
 // Create grid when the page reloads
 window.addEventListener('load', () => {
