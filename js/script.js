@@ -35,9 +35,7 @@ let randomColor = () => {
 
 // Function to clear the current grid
 let clearGrid = () => {
-    for (i = 0; i < (rows * columns); i++) {
-        container.remove(container.getElementsByClassName('square'));
-    }
+    window.location.reload();
 }
 
 let clearGridInfo = () => {
@@ -48,6 +46,11 @@ let clearGridInfo = () => {
 window.addEventListener('load', () => {
     createGrid(Number(prompt('Grid Size')));
 });
+
+// Make button refresh the page
+button.addEventListener('click', (e) => {
+    window.location.reload();
+})
 
 body.append(button);
 body.append(container);
